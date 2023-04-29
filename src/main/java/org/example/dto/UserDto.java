@@ -41,7 +41,7 @@ public class UserDto {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(BankCard.class, id);
     }
     public List<User> findAll(){
-        List<User> users = (List<User>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From User").list();
-        return users;
+       // List<User> users = (List<User>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From  User").list();
+        return HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("SELECT a FROM User a", User.class).getResultList();
     }
 }

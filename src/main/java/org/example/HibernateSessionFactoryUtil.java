@@ -18,8 +18,6 @@ public class HibernateSessionFactoryUtil {
         if(sessionFactory == null){
             try{
                 Configuration configuration = new Configuration().configure();
-                configuration.addAnnotatedClass(User.class);
-                configuration.addAnnotatedClass(BankCard.class);
                 sessionFactory = configuration.buildSessionFactory();
             }catch (Exception e){
                 e.printStackTrace();
